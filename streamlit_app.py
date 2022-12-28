@@ -55,7 +55,9 @@ X_test = np.array(x[15000:]).reshape(-1, 1)
 y_test = np.array(y[15000:])
 
 # Initialise the regressor
-reg = ESNRegressor()
+# Create a slider to control the parameter
+n_res = st.sidebar.slider("Neuron in the reservoir", 10, 100, 500)
+reg = ESNRegressor(n_reservoir = n_res)
 # Fit the regresor
 reg.fit(X=X_train, y=y_train)
 # Predict Ys
