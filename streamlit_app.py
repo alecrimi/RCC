@@ -8,14 +8,15 @@ import matplotlib.pyplot as plt
 x, y = [], []
 x.append(0.1)
 y.append(0.2)
-for i in range(1, 13):
+nochangerange = 13
+for i in range(1, nochangerange):
     xi = x[i-1]*(3.78-3.78*x[i-1])
     yi = y[i-1]*(3.77-3.77*y[i-1])
     x.append(xi)
     y.append(yi)
 	
 st.title("Reservoir Computing Causality Demo")	
-st.markdown(" First 30 time points of the 2 demo series")	
+
 
 st.sidebar.write("## Change the C parameters to change Series2 as in Sugihara et al. :gear:")
 
@@ -23,7 +24,7 @@ st.sidebar.write("## Change the C parameters to change Series2 as in Sugihara et
 # Create a slider to control the parameter
 C = st.sidebar.slider("C Parameter", 0.0, 1.0, 0.8)
 	
-for i in range(13, 20001):
+for i in range(nochangerange, 20001):
 	xi = x[i-1]*(3.78-3.78*x[i-1])
 	yi = y[i-1]*(3.77-3.77*y[i-1]-C*x[i-1-10])
 	x.append(xi)
@@ -32,8 +33,9 @@ series1 = x
 series2 = y 
 
 # Create the plot
-plt.plot(series1 , label="Series 1")
-plt.plot(series2, label="Series 2")
+st.markdown(" First 30 time points of the 2 demo series")	
+plt.plot(series1[:30] , label="Series 1")
+plt.plot(series2[:30], label="Series 2")
 
 # Add a legend
 plt.legend()
