@@ -56,7 +56,7 @@ y_test = np.array(y[15000:])
 
 # Initialise the regressor
 # Create a slider to control the parameter
-n_res = st.sidebar.slider("Neuron in the reservoir", 10, 100, 500)
+n_res = st.sidebar.slider("Neuron in the reservoir", 10, 500, 100)
 reg = ESNRegressor(n_reservoir = n_res)
 # Fit the regresor
 reg.fit(X=X_train, y=y_train)
