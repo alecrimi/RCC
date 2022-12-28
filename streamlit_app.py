@@ -26,8 +26,8 @@ series1 = x
 series2 = y 
 
 # Create the plot
-plt.plot(series1.index, series1.value, label="Series 1")
-plt.plot(series2.index, series2.value, label="Series 2")
+plt.plot(series1 , label="Series 1")
+plt.plot(series2, label="Series 2")
 
 # Add a legend
 plt.legend()
