@@ -14,10 +14,12 @@ for i in range(1, 13):
     x.append(xi)
     y.append(yi)
 	
-st.write("<b>Those are the time series designed according to the parameter as in Sugihara et al.</b>")	
+st.write("""
+#Those are the time series designed according to the parameter as in Sugihara et al.</b>
+""")	
 
 # Create a slider to control the parameter
-C = st.sidebar.slider("Parameter", 0.0, 1.0, 0.8)
+C = st.sidebar.slider("C Parameter", 0.0, 1.0, 0.8)
 	
 for i in range(13, 20001):
 	xi = x[i-1]*(3.78-3.78*x[i-1])
