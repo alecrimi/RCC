@@ -15,7 +15,7 @@ for i in range(1, 13):
     y.append(yi)
 
 # Create a slider to control the parameter
-parameter = st.sidebar.slider("Parameter", 0, 1, 0.8)
+parameter = st.sidebar.slider("Parameter", 0.0, 1.0, 0.8)
 	
 for i in range(13, 20001):
 	xi = x[i-1]*(3.78-3.78*x[i-1])
