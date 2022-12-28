@@ -68,7 +68,8 @@ out_df['y_test'] = y_test[20:]
 out_df['y_pred'] = y_pred[20:]
 # Calculate Pearson's coefficient
 st.markdown("The Pearson correlation of the predicted series with the ground truth in crossvalidation manner was: ")
-st.markdown(np.corrcoef(y_test[20:], y_pred[20:]))
+ = np.corrcoef(y_test[20:], y_pred[20:])
+st.markdown(peacorr[0,1])
 
 hide_streamlit_style = """
             <style>
