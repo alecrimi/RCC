@@ -15,9 +15,7 @@ for i in range(1, 13):
     y.append(yi)
 	
 st.title("Reservoir Computing Causality Demo")	
-st.write("""
-# First 30 time points of the 2 demo series.
-""")	
+st.markdown(" First 30 time points of the 2 demo series")	
 
 st.sidebar.write("## Change the C parameters to change Series2 as in Sugihara et al. :gear:")
 
