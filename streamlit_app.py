@@ -15,8 +15,11 @@ for i in range(1, 13):
     y.append(yi)
 	
 st.write("""
-#Those are the time series designed according to the parameter as in Sugihara et al.</b>
+#Those are the time series designed according to the parameter as in Sugihara et al.
 """)	
+
+st.sidebar.write("## Change the C parameters to change Series2 :gear:")
+
 
 # Create a slider to control the parameter
 C = st.sidebar.slider("C Parameter", 0.0, 1.0, 0.8)
