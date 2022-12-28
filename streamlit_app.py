@@ -33,4 +33,5 @@ plt.plot(series2, label="Series 2")
 plt.legend()
 
 # Show the plot
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot()
