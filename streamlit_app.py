@@ -13,13 +13,15 @@ for i in range(1, 13):
     yi = y[i-1]*(3.77-3.77*y[i-1])
     x.append(xi)
     y.append(yi)
+	
+st.write("Move the slider to change the C parameter ")	
 
 # Create a slider to control the parameter
-parameter = st.sidebar.slider("Parameter", 0.0, 1.0, 0.8)
+C = st.sidebar.slider("Parameter", 0.0, 1.0, 0.8)
 	
 for i in range(13, 20001):
 	xi = x[i-1]*(3.78-3.78*x[i-1])
-	yi = y[i-1]*(3.77-3.77*y[i-1]-parameter*x[i-1-10])
+	yi = y[i-1]*(3.77-3.77*y[i-1]-C*x[i-1-10])
 	x.append(xi)
 	y.append(yi)
 series1 = x
