@@ -23,7 +23,7 @@ st.sidebar.write("## Change the C parameters to change Series2 as in Sugihara et
 
 
 # Create a slider to control the parameter
-C = st.sidebar.slider("C Parameter", 0.0, 1.0, 0.8)
+C = st.sidebar.slider("C Parameter", 0.0, 0.85, 0.8)
 	
 for i in range(nochangerange, 20001):
 	xi = x[i-1]*(3.78-3.78*x[i-1])
