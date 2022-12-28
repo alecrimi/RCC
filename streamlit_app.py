@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from pyrcn.echo_state_network import ESNRegressor
 
 # Read in the data for the two time series
 #series1 = pd.read_csv("series1.csv")
@@ -43,6 +44,33 @@ plt.legend()
 # Show the plot
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot()
+
+
+from pyrcn.echo_state_network import ESNRegressor
+import numpy as np
+# Split data in train and test
+X_train = np.array(x[:15000]).reshape(-1, 1)
+y_train = np.array(y[:15000])
+X_test = np.array(x[15000:]).reshape(-1, 1)
+y_test = np.array(y[15000:])
+
+# Initialise the regressor
+reg = ESNRegressor()
+# Fit the regresor
+reg.fit(X=X_train, y=y_train)
+# Predict Ys
+y_pred = reg.predict(X_test)
+
+# Store in a dataframe all but the first twenty time steps
+import pandas as pd
+out_df = pd.DataFrame(columns=['y ground-truth', 'y predicted'])
+out_df['y_test'] = y_test[20:]
+out_df['y_pred'] = y_pred[20:]
+# Calculate Pearson's coefficient
+print(np.corrcoef(y_test[20:], y_pred[20:]))
+
+
+
 
 hide_streamlit_style = """
             <style>
