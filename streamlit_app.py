@@ -14,7 +14,7 @@ for i in range(1, 13):
     x.append(xi)
     y.append(yi)
 	
-st.write("Move the slider to change the C parameter ")	
+st.write("<b>Those are the time series designed according to the parameter as in Sugihara et al.</b>")	
 
 # Create a slider to control the parameter
 C = st.sidebar.slider("Parameter", 0.0, 1.0, 0.8)
