@@ -14,11 +14,12 @@ for i in range(1, 13):
     x.append(xi)
     y.append(yi)
 	
+st.title("Reservoir Computing Causality Demo")	
 st.write("""
-# Those are the time series designed according to the parameter as in Sugihara et al.
+# First 30 time points of the 2 demo series.
 """)	
 
-st.sidebar.write("## Change the C parameters to change Series2 :gear:")
+st.sidebar.write("## Change the C parameters to change Series2 as in Sugihara et al. :gear:")
 
 
 # Create a slider to control the parameter
