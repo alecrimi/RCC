@@ -34,9 +34,9 @@ series1 = x
 series2 = y 
 
 # Create the plot
-st.markdown(" First 30 time points of the 2 demo series")	
-plt.plot(series1[:30] , label="Series 1")
-plt.plot(series2[:30], label="Series 2")
+st.markdown(" First 50 time points of the 2 demo series")	
+plt.plot(series1[:50] , label="Series 1")
+plt.plot(series2[:50], label="Series 2")
 
 # Add a legend
 plt.legend()
@@ -67,10 +67,8 @@ out_df = pd.DataFrame(columns=['y ground-truth', 'y predicted'])
 out_df['y_test'] = y_test[20:]
 out_df['y_pred'] = y_pred[20:]
 # Calculate Pearson's coefficient
-print(np.corrcoef(y_test[20:], y_pred[20:]))
-
-
-
+st.markdown("The Pearson correlation of the predicted series with the ground truth in crossvalidation manner was: ")
+st.markdown(np.corrcoef(y_test[20:], y_pred[20:]))
 
 hide_streamlit_style = """
             <style>
