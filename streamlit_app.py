@@ -15,7 +15,7 @@ for i in range(1, 13):
     y.append(yi)
 	
 st.write("""
-#Those are the time series designed according to the parameter as in Sugihara et al.
+# Those are the time series designed according to the parameter as in Sugihara et al.
 """)	
 
 st.sidebar.write("## Change the C parameters to change Series2 :gear:")
