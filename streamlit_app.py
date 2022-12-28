@@ -42,7 +42,6 @@ plt.legend()
 # Show the plot
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot()
-st.beta_set_page_config(page_title="Reservoir computing causality",  layout = 'wide', initial_sidebar_state = 'auto')
 
 hide_streamlit_style = """
             <style>
