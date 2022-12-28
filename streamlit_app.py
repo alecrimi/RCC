@@ -45,9 +45,15 @@ plt.legend()
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot()
 
-
+from pyrcn.base.blocks import InputToNode, NodeToNode
 from pyrcn.echo_state_network import ESNRegressor
+
+from utils.training_utils import *
+from utils.RCC_utils import *
+from utils.plotting_utils import plot_RCC_input2output
+from utils.reservoir_networks import *
 import numpy as np
+
 # Split data in train and test
 X_train = np.array(x[:15000]).reshape(-1, 1)
 y_train = np.array(y[:15000])
@@ -56,7 +62,7 @@ y_test = np.array(y[15000:])
 
 # Initialise the regressor
 # Create a slider to control the parameter
-n_res = st.sidebar.slider("Neuron in the reservoir", 10, 500, 100)
+n_res = st.sidebar.slider("Neurons in the reservoir", 10, 500, 100)
 reg = ESNRegressor(n_reservoir = n_res)
 # Fit the regresor
 reg.fit(X=X_train, y=y_train)
